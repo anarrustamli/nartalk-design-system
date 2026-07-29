@@ -1,0 +1,83 @@
+/* ============================================================
+   NarTalk brend qatı — nartalk.com platformasına drop-in patch
+   ------------------------------------------------------------
+   Canlı platforma: Vite + Tailwind CSS v4.2.1 + shadcn/ui, Geist.
+   shadcn dəyişənləri artıq düz yerdədir — sadəcə DƏYƏRLƏRİ
+   NarTalk brendinə bağlanmayıb: --primary hazırda oklch(0.205 0 0),
+   yəni chroma 0 = tamamilə neytral qara. Brend qırmızısı token
+   sistemində ümumiyyətlə yoxdur.
+
+   Bu fayl heç bir komponenti yenidən yazmır. shadcn dəyişənlərini
+   yenidən təyin edir, ona görə Button, Card, Input, Sidebar, Badge —
+   hamısı avtomatik brendə keçir.
+
+   Quraşdırma: app/globals.css-in SONUNDA import et:
+       @import "./brand.css";
+   ============================================================ */
+
+:root {
+  /* --- Brend rampası (mənbə: logodan ölçülmüş #EF2E4C) --------- */
+  --nar-50:  oklch(0.9691 0.0181 17.30);
+  --nar-100: oklch(0.9350 0.0361 17.72);
+  --nar-200: oklch(0.8720 0.0713 17.99);
+  --nar-300: oklch(0.7803 0.1288 18.62);
+  --nar-400: oklch(0.6802 0.1852 18.90);
+  --nar-500: oklch(0.6208 0.2241 19.37);  /* identity — logo, böyük mətn */
+  --nar-600: oklch(0.5792 0.2192 20.47);  /* interaktiv — AA keçir (4.8:1) */
+  --nar-700: oklch(0.5102 0.1949 20.21);  /* hover */
+  --nar-800: oklch(0.4470 0.1683 17.39);  /* active */
+
+  --azure-500: oklch(0.5753 0.2043 261.99); /* fokus, seçim, info */
+  --azure-600: oklch(0.5015 0.2144 263.33); /* link */
+  --brick-600: oklch(0.5334 0.1885 30.09);  /* destructive — QIRMIZI BREND DEYİL */
+  --emerald-500: oklch(0.6486 0.1484 158.12);
+  --amber-500: oklch(0.7633 0.1652 68.46);
+
+  /* --- shadcn dəyişənlərinin brendə bağlanması (light) --------- */
+  /* DİQQƏT: primary = nar-600, nar-500 DEYİL.
+     nar-500 ağ üzərində 4.07:1 — 14px düymə mətni üçün AA-dan keçmir.
+     nar-600 4.8:1 verir. Identity qırmızısı logo üçün qalır. */
+  --primary: var(--nar-600);
+  --primary-foreground: oklch(1 0 0);
+
+  /* Fokus həlqəsi qəsdən azure-dur, qırmızı deyil:
+     qırmızı brenddə qırmızı fokus həlqəsi "xəta" kimi oxunur. */
+  --ring: var(--azure-500);
+
+  /* Destructive Brick-dir, Nar deyil — qırmızı brenddə qırmızı
+     "sil" düyməsi real təhlükədir. Brick narıncıya çalır və gözlə
+     seçilir. Qayda: dolu Nar və dolu Brick düymə yan-yana OLMAZ. */
+  --destructive: var(--brick-600);
+  --destructive-foreground: oklch(1 0 0);
+
+  --radius: 0.625rem; /* 10px — artıq uyğundur, dəyişmir */
+}
+
+.dark {
+  /* Dark rejimdə Nar bir pillə qalxır ki, ağ etiket AA-da qalsın. */
+  --primary: oklch(0.6104 0.2224 19.72);   /* nar-550 #E9284A */
+  --primary-foreground: oklch(1 0 0);
+  --ring: oklch(0.6802 0.1852 261.50);      /* azure-400 */
+  --destructive: oklch(0.6120 0.1988 29.23);/* brick-500 */
+}
+
+/* --- Brend köməkçiləri: yalnız markanın özü üçün -------------- */
+/* Logo və marketing başlıqlarında identity qırmızısı işlənir. */
+.nar-brand      { color: var(--nar-500); }
+.nar-brand-bg   { background-color: var(--nar-500); }
+
+/* Marketing başlıqları: Geist 600, mənfi tracking.
+   Məhsul UI-da display ölçüləri işlənmir. */
+.nar-display {
+  font-weight: 600;
+  letter-spacing: -0.028em;
+  text-wrap: balance;
+}
+
+/* Rəqəm sütunları, metriklər, timestamp-lar, latency, kvota:
+   tabular rəqəm MƏCBURİDİR — sürüşən rəqəmlər data məhsulunu
+   dərhal ucuz göstərir. */
+.nar-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
