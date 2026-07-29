@@ -1,0 +1,133 @@
+/* ============================================================
+   SEMANTIC TOKENS - DARK
+   Applied by putting class="dark" on <html> or any container.
+   Dark mode is re-authored, not inverted: surfaces step UP in
+   lightness with elevation, borders carry the hierarchy, and the
+   Nar action colour is lifted one step so white labels stay AA.
+   ============================================================ */
+.dark{
+  --color-bg-default:#0B0B0D;
+  --color-bg-subtle:#101013;
+  --color-bg-inset:#08080A;
+  --color-bg-canvas:#08080A;
+
+  --color-surface-default:#131316;
+  --color-surface-subtle:#17171B;
+  --color-surface-elevated:#1C1C21;
+  --color-surface-overlay:#1C1C21;
+  --color-surface-sunken:#0B0B0D;
+  --color-surface-hover:rgba(255,255,255,.045);
+  --color-surface-active:rgba(255,255,255,.075);
+  --color-surface-selected:rgba(46,111,239,.16);
+  --color-surface-brand-subtle:rgba(239,46,76,.12);
+  --color-surface-disabled:#17171B;
+
+  --color-text-primary:#F4F4F5;
+  --color-text-secondary:#A8A8B3;
+  --color-text-tertiary:#84848F;
+  --color-text-muted:#6A6A76;
+  --color-text-disabled:#4C4C56;
+  --color-text-inverse:#0B0B0D;
+  --color-text-on-brand:#FFFFFF;
+  --color-text-brand:var(--nar-300);
+  --color-text-link:var(--azure-300);
+  --color-text-link-hover:var(--azure-200);
+  --color-text-code:#E4E4E8;
+  --color-text-placeholder:#6A6A76;
+
+  --color-border-subtle:#1C1C21;
+  --color-border-default:#2A2A31;
+  --color-border-strong:#3C3C45;
+  --color-border-inverse:#F4F4F5;
+  --color-border-brand:var(--nar-500);
+  --color-border-focus:var(--azure-400);
+
+  --color-action-primary:var(--nar-550);
+  --color-action-primary-hover:var(--nar-500);
+  --color-action-primary-active:var(--nar-600);
+  --color-action-primary-fg:#FFFFFF;
+  --color-action-secondary:#1C1C21;
+  --color-action-secondary-hover:#24242A;
+  --color-action-secondary-active:#2A2A31;
+  --color-action-secondary-fg:#F4F4F5;
+  --color-action-ghost-hover:rgba(255,255,255,.06);
+  --color-action-ghost-active:rgba(255,255,255,.1);
+  --color-action-destructive:var(--brick-500);
+  --color-action-destructive-hover:var(--brick-400);
+  --color-action-destructive-active:var(--brick-600);
+  --color-action-destructive-fg:#FFFFFF;
+  --color-action-destructive-subtle:rgba(224,64,47,.14);
+  --color-action-success:var(--emerald-500);
+  --color-action-success-hover:var(--emerald-400);
+  --color-action-success-fg:#04150E;
+  --color-action-disabled-bg:#1C1C21;
+  --color-action-disabled-fg:#4C4C56;
+
+  --color-status-success-fg:var(--emerald-300);
+  --color-status-success-bg:rgba(16,169,107,.14);
+  --color-status-success-border:rgba(16,169,107,.32);
+  --color-status-success-solid:var(--emerald-400);
+  --color-status-warning-fg:var(--amber-300);
+  --color-status-warning-bg:rgba(245,155,11,.14);
+  --color-status-warning-border:rgba(245,155,11,.32);
+  --color-status-warning-solid:var(--amber-400);
+  --color-status-error-fg:var(--brick-300);
+  --color-status-error-bg:rgba(224,64,47,.14);
+  --color-status-error-border:rgba(224,64,47,.32);
+  --color-status-error-solid:var(--brick-400);
+  --color-status-info-fg:var(--azure-300);
+  --color-status-info-bg:rgba(46,111,239,.16);
+  --color-status-info-border:rgba(46,111,239,.34);
+  --color-status-info-solid:var(--azure-400);
+  --color-status-neutral-fg:#A8A8B3;
+  --color-status-neutral-bg:rgba(255,255,255,.06);
+  --color-status-neutral-border:rgba(255,255,255,.12);
+  --color-status-neutral-solid:#6A6A76;
+  --color-status-brand-fg:var(--nar-300);
+  --color-status-brand-bg:rgba(239,46,76,.14);
+  --color-status-brand-border:rgba(239,46,76,.34);
+  --color-status-brand-solid:var(--nar-500);
+
+  --color-focus-ring:var(--azure-400);
+  --color-focus-ring-offset:#0B0B0D;
+  --color-selection-bg:rgba(46,111,239,.34);
+  --color-selection-fg:#FFFFFF;
+  --color-overlay:rgba(0,0,0,.64);
+  --color-overlay-strong:rgba(0,0,0,.78);
+
+  --chart-1:var(--nar-400); --chart-2:var(--azure-400); --chart-3:var(--emerald-400);
+  --chart-4:var(--amber-400); --chart-5:var(--violet-300); --chart-6:var(--cyan-300);
+  --chart-7:#84848F; --chart-8:var(--pink-300);
+  --chart-grid:#1F1F25; --chart-axis:#6A6A76; --chart-track:rgba(255,255,255,.07);
+
+  --code-bg:#101013;
+  --code-bg-inline:rgba(255,255,255,.07);
+  --code-fg:#E4E4E8;
+  --code-gutter:#5A5A65;
+  --code-line-highlight:rgba(46,111,239,.1);
+  --code-selection:rgba(46,111,239,.3);
+  --code-keyword:var(--nar-300);
+  --code-string:var(--emerald-300);
+  --code-number:var(--amber-300);
+  --code-comment:#6A6A76;
+  --code-function:var(--azure-300);
+  --code-property:var(--violet-300);
+  --code-punctuation:#84848F;
+  --code-added:var(--emerald-400);
+  --code-removed:var(--brick-400);
+
+  --node-start:var(--emerald-400);
+  --node-message:var(--azure-400);
+  --node-question:var(--nar-400);
+  --node-condition:var(--amber-400);
+  --node-api:var(--violet-300);
+  --node-webhook:var(--cyan-300);
+  --node-otp:var(--pink-300);
+  --node-notification:var(--azure-300);
+  --node-delay:#6A6A76;
+  --node-end:#A8A8B3;
+  --canvas-bg:#08080A;
+  --canvas-dot:#22222A;
+  --canvas-edge:#3C3C45;
+  --canvas-edge-active:var(--azure-400);
+}

@@ -1,0 +1,78 @@
+<!-- @dsCard group="Dashboard" viewport="1440x900" name="Dashboard" subtitle="Overview, bots list and the responses table with detail drawer — clickable" -->
+<!-- @startingPoint section="Dashboard" subtitle="NarTalk dashboard shell with overview, bots and responses" viewport="1440x900" -->
+<!DOCTYPE html><html lang="az"><head><meta charset="utf-8"><title>NarTalk — Dashboard</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/lucide/dist/umd/lucide.min.js"></script>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body,#root{height:100%;margin:0}</style></head>
+<body><div id="root"></div>
+<script type="text/babel" src="Shell.jsx"></script>
+<script type="text/babel" src="Overview.jsx"></script>
+<script type="text/babel" src="BotsList.jsx"></script>
+<script type="text/babel" src="Responses.jsx"></script>
+<script type="text/babel">
+const { CommandPalette, EmptyState, Button, Banner, AccessDenied } = window.NarTalkDesignSystem_3e1107;
+
+const CRUMBS = {
+  overview: [{ label: "Acme Workspace" }, { label: "Ümumi baxış" }],
+  bots: [{ label: "Acme Workspace" }, { label: "Botlarım" }],
+  forms: [{ label: "Acme Workspace" }, { label: "Formalar" }],
+  responses: [{ label: "Acme Workspace" }, { label: "Cavablar" }],
+};
+
+function App() {
+  const [route, setRoute] = React.useState("overview");
+  const [dark, setDark] = React.useState(false);
+  const [collapsed, setCollapsed] = React.useState(false);
+  const [palette, setPalette] = React.useState(false);
+  const [openRow, setOpenRow] = React.useState(null);
+
+  React.useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+  React.useEffect(() => {
+    const h = (e) => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); setPalette(true); } };
+    document.addEventListener("keydown", h);
+    return () => document.removeEventListener("keydown", h);
+  }, []);
+
+  const go = (r) => { setRoute(r); setOpenRow(null); };
+
+  return (
+    <>
+      <AppShell route={route} onRoute={go} crumbs={CRUMBS[route] || [{ label: "Acme Workspace" }, { label: "—" }]}
+        dark={dark} onDark={() => setDark(!dark)} collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)}
+        onPalette={() => setPalette(true)}>
+        {route === "overview" ? <Overview onOpenResponse={(r) => { setRoute("responses"); setOpenRow({ ...r, id: 1284, at: "29 İyul 14:02", src: "Telegram" }); }} />
+         : route === "bots" ? <BotsList onOpenBuilder={() => { window.location.href = "../builder/index.html"; }} />
+         : route === "responses" ? <Responses open={openRow} onOpen={setOpenRow} onClose={() => setOpenRow(null)} />
+         : route === "forms" ? <><PageHead title="Formalar" subtitle="Web formalarınızı yaradın və paylaşın."><Button size="sm" variant="primary" icon="Plus">Forma yarat</Button></PageHead><div className="nt-card"><EmptyState preset="forms" /></div></>
+         : route === "billing" ? <><PageHead title="Billing" /><AccessDenied onBack={() => go("overview")} /></>
+         : <><PageHead title={(NAV.flatMap(g => g.items).find(i => i.key === route) || {}).label} subtitle="Bu ekran developer UI kit-də göstərilir." /><div className="nt-card"><EmptyState preset="notifications" title="Bu bölmə developer kit-dədir" description="API açarları, webhook-lar, OTP və komanda ekranları ui_kits/developer altındadır." action={<Button size="sm" variant="secondary" iconAfter="ArrowUpRight" as="a" href="../developer/index.html">Developer kit-i aç</Button>} /></div></>}
+      </AppShell>
+      <CommandPalette open={palette} onClose={() => setPalette(false)} activeIndex={0}
+        groups={[
+          { label: "Əməliyyatlar", items: [
+            { label: "Bot yarat", icon: "Plus", shortcut: "⌘N" },
+            { label: "Forma yarat", icon: "ClipboardList" },
+            { label: "Cavabları ixrac et", icon: "Download" },
+            { label: "API açarı yarat", icon: "KeyRound" },
+          ]},
+          { label: "Naviqasiya", items: [
+            { label: "Ümumi baxış", icon: "ChartNoAxesColumn", onClick: () => { go("overview"); setPalette(false); } },
+            { label: "Botlarım", icon: "Bot", onClick: () => { go("bots"); setPalette(false); } },
+            { label: "Cavablar", icon: "Inbox", hint: "1,284", onClick: () => { go("responses"); setPalette(false); } },
+          ]},
+          { label: "Botlar", items: [
+            { label: "Müştəri müraciətləri", icon: "Bot", hint: "@muraciet_bot" },
+            { label: "Sifariş qəbulu", icon: "Bot", hint: "@sifaris_bot" },
+          ]},
+        ]} />
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script></body></html>

@@ -1,0 +1,28 @@
+/* Dashboard shell geometry + breakpoints. */
+:root{
+  --bp-mobile:390px; --bp-tablet:768px; --bp-laptop:1024px; --bp-desktop:1280px; --bp-wide:1440px;
+
+  --layout-content-max:1200px;
+  --layout-content-max-wide:1440px;
+  --layout-content-max-prose:680px;
+  --layout-marketing-max:1160px;
+
+  --layout-sidebar-w:248px;
+  --layout-sidebar-w-collapsed:56px;
+  --layout-inspector-w:320px;
+  --layout-drawer-w:480px;
+  --layout-drawer-w-wide:640px;
+  --layout-topbar-h:52px;
+  --layout-subnav-h:44px;
+  --layout-toolbar-h:44px;
+  --layout-mobile-tabbar-h:56px;
+
+  --layout-page-pad-x:32px;
+  --layout-page-pad-y:24px;
+  --layout-grid-cols:12; /* @kind other */
+  --layout-grid-gutter:24px;
+  --layout-card-gap:16px;
+}
+@media (max-width:1279px){:root{--layout-page-pad-x:24px;--layout-grid-gutter:20px;--layout-sidebar-w:224px}}
+@media (max-width:1023px){:root{--layout-page-pad-x:20px;--layout-grid-cols:8; /* @kind other */--layout-grid-gutter:16px;--layout-card-gap:12px}}
+@media (max-width:767px){:root{--layout-page-pad-x:16px;--layout-page-pad-y:16px;--layout-grid-cols:4; /* @kind other */--layout-topbar-h:56px}}

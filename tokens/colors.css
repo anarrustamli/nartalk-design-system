@@ -1,0 +1,179 @@
+/* ============================================================
+   NarTalk colour primitives
+   Nar (pomegranate) red is sampled from the logo: #EF2E4C.
+   ============================================================ */
+:root{
+  /* --- Brand: Nar (pomegranate red) ------------------------- */
+  --nar-50:#FFF1F3; --nar-100:#FFE1E6; --nar-200:#FFC7D0; --nar-300:#FF9FB0;
+  --nar-400:#F9647F; --nar-500:#EF2E4C; --nar-550:#E9284A; --nar-600:#DE1E3E;
+  --nar-700:#BC1533; --nar-800:#9C1230; --nar-900:#83132D; --nar-950:#4B0616;
+
+  /* --- Brand secondary: Ink (near-black surfaces & buttons) -- */
+  --ink-50:#F6F6F7; --ink-100:#EBEBED; --ink-200:#D5D5D9; --ink-300:#AEAEB6;
+  --ink-400:#7C7C87; --ink-500:#53535D; --ink-600:#3A3A42; --ink-700:#2A2A31;
+  --ink-800:#1C1C21; --ink-900:#131316; --ink-950:#0B0B0D;
+
+  /* --- Neutral: Graphite (UI chrome, text, borders) ---------- */
+  --graphite-0:#FFFFFF; --graphite-25:#FCFCFD; --graphite-50:#FAFAFA;
+  --graphite-100:#F4F4F5; --graphite-200:#E9E9EC; --graphite-300:#D6D6DB;
+  --graphite-400:#A0A0AB; --graphite-500:#71717B; --graphite-600:#52525C;
+  --graphite-700:#3F3F47; --graphite-800:#27272B; --graphite-900:#18181B;
+  --graphite-950:#0B0B0D;
+
+  /* --- Accent: Azure (data, links, info, focus) -------------- */
+  --azure-50:#EFF5FF; --azure-100:#DBE8FE; --azure-200:#BFD5FE; --azure-300:#93B8FD;
+  --azure-400:#6094FA; --azure-500:#2E6FEF; --azure-600:#1B54DB; --azure-700:#1742AF;
+  --azure-800:#17398C; --azure-900:#18336F; --azure-950:#101F45;
+
+  /* --- Success: Emerald -------------------------------------- */
+  --emerald-50:#ECFDF4; --emerald-100:#D1FAE4; --emerald-200:#A7F3CE; --emerald-300:#6EE7B2;
+  --emerald-400:#34D392; --emerald-500:#10A96B; --emerald-600:#067A50; --emerald-700:#066343;
+  --emerald-800:#075136; --emerald-900:#07422E; --emerald-950:#02271C;
+
+  /* --- Warning: Amber --------------------------------------- */
+  --amber-50:#FFFAEB; --amber-100:#FEF0C7; --amber-200:#FEE18A; --amber-300:#FDCB4D;
+  --amber-400:#FCB424; --amber-500:#F59B0B; --amber-600:#DC7F06; --amber-700:#B65C09;
+  --amber-800:#93470E; --amber-900:#7A3B0F; --amber-950:#461D05;
+
+  /* --- Danger: Brick (destructive - deliberately NOT Nar) ---- */
+  --brick-50:#FEF3F2; --brick-100:#FEE4E2; --brick-200:#FECDC9; --brick-300:#FDA29B;
+  --brick-400:#F97066; --brick-500:#E0402F; --brick-600:#C22C1D; --brick-700:#A02318;
+  --brick-800:#841F17; --brick-900:#6E1D16; --brick-950:#3A0C08;
+
+  /* --- Support hues (charts, node categories) ---------------- */
+  --violet-100:#EDE9FE; --violet-300:#C4B5FD; --violet-500:#8B5CF6; --violet-600:#7439E4; --violet-700:#5B27BE;
+  --cyan-100:#CFF7FE; --cyan-300:#78DDF3; --cyan-500:#06AECF; --cyan-600:#0888A6; --cyan-700:#0C6B84;
+  --pink-100:#FCE7F3; --pink-300:#F9A8D4; --pink-500:#DB2777; --pink-600:#BE1863; --pink-700:#9D174D;
+
+  /* ==========================================================
+     SEMANTIC TOKENS - LIGHT (default)
+     ========================================================== */
+  --color-bg-default:#FFFFFF;
+  --color-bg-subtle:var(--graphite-50);
+  --color-bg-inset:var(--graphite-100);
+  --color-bg-canvas:var(--graphite-100);
+
+  --color-surface-default:#FFFFFF;
+  --color-surface-subtle:var(--graphite-50);
+  --color-surface-elevated:#FFFFFF;
+  --color-surface-overlay:#FFFFFF;
+  --color-surface-sunken:var(--graphite-100);
+  --color-surface-hover:var(--graphite-100);
+  --color-surface-active:var(--graphite-200);
+  --color-surface-selected:var(--azure-50);
+  --color-surface-brand-subtle:var(--nar-50);
+  --color-surface-disabled:var(--graphite-100);
+
+  --color-text-primary:var(--ink-900);
+  --color-text-secondary:var(--graphite-600);
+  --color-text-tertiary:var(--graphite-500);
+  --color-text-muted:var(--graphite-400);
+  --color-text-disabled:var(--graphite-400);
+  --color-text-inverse:#FFFFFF;
+  --color-text-on-brand:#FFFFFF;
+  --color-text-brand:var(--nar-700);
+  --color-text-link:var(--azure-600);
+  --color-text-link-hover:var(--azure-700);
+  --color-text-code:var(--ink-800);
+  --color-text-placeholder:var(--graphite-400);
+
+  --color-border-subtle:#F0F0F2;
+  --color-border-default:#E4E4E8;
+  --color-border-strong:var(--graphite-300);
+  --color-border-inverse:var(--ink-800);
+  --color-border-brand:var(--nar-500);
+  --color-border-focus:var(--azure-500);
+
+  --color-action-primary:var(--nar-600);
+  --color-action-primary-hover:var(--nar-700);
+  --color-action-primary-active:var(--nar-800);
+  --color-action-primary-fg:#FFFFFF;
+  --color-action-secondary:#FFFFFF;
+  --color-action-secondary-hover:var(--graphite-50);
+  --color-action-secondary-active:var(--graphite-100);
+  --color-action-secondary-fg:var(--ink-900);
+  --color-action-ghost-hover:var(--graphite-100);
+  --color-action-ghost-active:var(--graphite-200);
+  --color-action-destructive:var(--brick-600);
+  --color-action-destructive-hover:var(--brick-700);
+  --color-action-destructive-active:var(--brick-800);
+  --color-action-destructive-fg:#FFFFFF;
+  --color-action-destructive-subtle:var(--brick-50);
+  --color-action-success:var(--emerald-600);
+  --color-action-success-hover:var(--emerald-700);
+  --color-action-success-fg:#FFFFFF;
+  --color-action-disabled-bg:var(--graphite-100);
+  --color-action-disabled-fg:var(--graphite-400);
+
+  --color-status-success-fg:var(--emerald-700);
+  --color-status-success-bg:var(--emerald-50);
+  --color-status-success-border:var(--emerald-200);
+  --color-status-success-solid:var(--emerald-500);
+  --color-status-warning-fg:var(--amber-800);
+  --color-status-warning-bg:var(--amber-50);
+  --color-status-warning-border:var(--amber-200);
+  --color-status-warning-solid:var(--amber-500);
+  --color-status-error-fg:var(--brick-700);
+  --color-status-error-bg:var(--brick-50);
+  --color-status-error-border:var(--brick-200);
+  --color-status-error-solid:var(--brick-500);
+  --color-status-info-fg:var(--azure-700);
+  --color-status-info-bg:var(--azure-50);
+  --color-status-info-border:var(--azure-200);
+  --color-status-info-solid:var(--azure-500);
+  --color-status-neutral-fg:var(--graphite-600);
+  --color-status-neutral-bg:var(--graphite-100);
+  --color-status-neutral-border:var(--graphite-200);
+  --color-status-neutral-solid:var(--graphite-400);
+  --color-status-brand-fg:var(--nar-700);
+  --color-status-brand-bg:var(--nar-50);
+  --color-status-brand-border:var(--nar-200);
+  --color-status-brand-solid:var(--nar-500);
+
+  --color-focus-ring:var(--azure-500);
+  --color-focus-ring-offset:#FFFFFF;
+  --color-selection-bg:var(--azure-100);
+  --color-selection-fg:var(--ink-900);
+  --color-overlay:rgba(11,11,13,.44);
+  --color-overlay-strong:rgba(11,11,13,.64);
+  --color-scrim-blur:saturate(120%) blur(8px);
+
+  /* Charts */
+  --chart-1:var(--nar-500); --chart-2:var(--azure-500); --chart-3:var(--emerald-500);
+  --chart-4:var(--amber-500); --chart-5:var(--violet-500); --chart-6:var(--cyan-500);
+  --chart-7:var(--graphite-500); --chart-8:var(--pink-500);
+  --chart-grid:#EDEDF0; --chart-axis:var(--graphite-400); --chart-track:var(--graphite-100);
+
+  /* Code editor */
+  --code-bg:var(--graphite-50);
+  --code-bg-inline:var(--graphite-100);
+  --code-fg:var(--ink-800);
+  --code-gutter:var(--graphite-400);
+  --code-line-highlight:var(--azure-50);
+  --code-selection:var(--azure-100);
+  --code-keyword:var(--nar-700);
+  --code-string:var(--emerald-700);
+  --code-number:var(--amber-700);
+  --code-comment:var(--graphite-400);
+  --code-function:var(--azure-600);
+  --code-property:var(--violet-600);
+  --code-punctuation:var(--graphite-500);
+  --code-added:var(--emerald-600);
+  --code-removed:var(--brick-600);
+
+  /* Builder node categories - muted on purpose, canvas stays calm */
+  --node-start:var(--emerald-500);
+  --node-message:var(--azure-500);
+  --node-question:var(--nar-500);
+  --node-condition:var(--amber-500);
+  --node-api:var(--violet-500);
+  --node-webhook:var(--cyan-500);
+  --node-otp:var(--pink-500);
+  --node-notification:var(--azure-400);
+  --node-delay:var(--graphite-400);
+  --node-end:var(--graphite-600);
+  --canvas-bg:var(--graphite-50);
+  --canvas-dot:#DEDEE3;
+  --canvas-edge:var(--graphite-300);
+  --canvas-edge-active:var(--azure-500);
+}

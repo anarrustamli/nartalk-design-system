@@ -1,0 +1,22 @@
+/* Restrained radii. NarTalk should read as instrument, not toy.
+   Nothing in product UI goes past lg (10px) except pills and avatars. */
+:root{
+  --radius-none:0px;
+  --radius-xs:4px;
+  --radius-sm:6px;
+  --radius-md:8px;
+  --radius-lg:10px;
+  --radius-xl:14px;
+  --radius-2xl:18px;
+  --radius-full:9999px;
+
+  --radius-control:var(--radius-md);
+  --radius-input:var(--radius-md);
+  --radius-card:var(--radius-lg);
+  --radius-panel:var(--radius-xl);
+  --radius-node:var(--radius-lg);
+  --radius-badge:var(--radius-sm);
+  --radius-pill:var(--radius-full);
+  --radius-tooltip:var(--radius-sm);
+  --radius-code:var(--radius-md);
+}

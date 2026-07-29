@@ -1,0 +1,68 @@
+<!DOCTYPE html><html lang="az"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NarTalk Design System</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="assets/logo-mark-512.png">
+<style>
+  body{background:var(--color-bg-subtle)}
+  .wrap{max-width:var(--layout-marketing-max);margin:0 auto;padding:64px 24px 80px}
+  .lockup{display:flex;align-items:center;gap:12px}
+  .lockup img{width:36px;height:36px;display:block}
+  .lockup span{font:600 26px/1 var(--font-sans);letter-spacing:-.035em}
+  .lede{margin-top:20px;max-width:640px;font:400 17px/28px var(--font-sans);color:var(--color-text-secondary)}
+  .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  h2{margin:56px 0 18px;font:600 13px/1 var(--font-sans);letter-spacing:.09em;text-transform:uppercase;color:var(--color-text-brand)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+  .tile{display:block;padding:22px;background:var(--color-surface-default);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);text-decoration:none;transition:border-color .12s,box-shadow .12s}
+  .tile:hover{border-color:var(--color-border-strong);box-shadow:var(--shadow-level-2);text-decoration:none}
+  .tile h3{font:600 17px/1.3 var(--font-sans);letter-spacing:-.015em;color:var(--color-text-primary)}
+  .tile p{margin-top:7px;font:400 14px/22px var(--font-sans);color:var(--color-text-secondary)}
+  .swatches{display:flex;gap:0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--color-border-default)}
+  .swatches div{flex:1;height:56px}
+  .files{display:grid;gap:0;background:var(--color-surface-default);border:1px solid var(--color-border-default);border-radius:var(--radius-xl);overflow:hidden}
+  .files a,.files span{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 18px;border-bottom:1px solid var(--color-border-subtle);font:400 14px/1.4 var(--font-sans);color:var(--color-text-primary);text-decoration:none}
+  .files a:last-child,.files span:last-child{border-bottom:0}
+  .files a:hover{background:var(--color-surface-hover);text-decoration:none}
+  .files code{font:500 12.5px/1 var(--font-mono);color:var(--color-text-tertiary)}
+  footer{margin-top:64px;padding-top:22px;border-top:1px solid var(--color-border-default);font:400 13px/1.5 var(--font-sans);color:var(--color-text-muted)}
+</style></head>
+<body><div class="wrap">
+  <div class="lockup"><img src="assets/logo-mark-512.png" alt=""><span>NarTalk</span></div>
+  <p class="lede">Telegram-da data toplama platforması üçün dizayn sistemi. Rəng, tipoqrafiya və məsafə tokenləri, <code style="font-family:var(--font-mono);font-size:13px">.nt-*</code> CSS sinif qatı, 31 React komponent modulu və dörd tam məhsul ekranı.</p>
+  <div class="meta">
+    <span class="nt-badge" style="background:var(--color-status-brand-bg);color:var(--color-status-brand-fg);border-color:var(--color-status-brand-border)">Nar #EF2E4C</span>
+    <span class="nt-badge" style="background:var(--color-status-neutral-bg);color:var(--color-status-neutral-fg);border-color:var(--color-status-neutral-border)">Geist / Geist Mono</span>
+    <span class="nt-badge" style="background:var(--color-status-neutral-bg);color:var(--color-status-neutral-fg);border-color:var(--color-status-neutral-border)">411 token</span>
+    <span class="nt-badge" style="background:var(--color-status-neutral-bg);color:var(--color-status-neutral-fg);border-color:var(--color-status-neutral-border)">Lucide ikonları</span>
+  </div>
+
+  <h2>UI kitlər</h2>
+  <div class="grid">
+    <a class="tile" href="ui_kits/website/index.html"><h3>Marketing sayt</h3><p>nartalk.com səhifəsi — hero, necə işləyir, imkanlar, qiymətlər, footer.</p></a>
+    <a class="tile" href="ui_kits/dashboard/index.html"><h3>Dashboard</h3><p>Ümumi baxış, botlar, cavablar cədvəli və detal paneli. ⌘K əmr paneli işləyir.</p></a>
+    <a class="tile" href="ui_kits/builder/index.html"><h3>Bot &amp; forma qurucusu</h3><p>Flow canvas, node inspector, forma blokları, məntiq qaydaları, paylaşma.</p></a>
+    <a class="tile" href="ui_kits/developer/index.html"><h3>Developer &amp; workspace</h3><p>API açarları, webhook log, OTP idarəetməsi, komanda və icazə matrisi.</p></a>
+  </div>
+
+  <h2>Brend</h2>
+  <div class="swatches">
+    <div style="background:var(--nar-500)"></div>
+    <div style="background:var(--azure-500)"></div>
+    <div style="background:var(--emerald-500)"></div>
+    <div style="background:var(--amber-400)"></div>
+    <div style="background:var(--brick-600)"></div>
+    <div style="background:var(--ink-900)"></div>
+  </div>
+
+  <h2>Sənədlər və mənbələr</h2>
+  <div class="files">
+    <a href="thumbnail.html">Brend kartı<code>thumbnail.html</code></a>
+    <a href="styles.css">Stil giriş nöqtəsi<code>styles.css</code></a>
+    <a href="_ds_manifest.json">Komponent və token manifesti<code>_ds_manifest.json</code></a>
+    <a href="_adherence.oxlintrc.json">Lint qaydaları<code>_adherence.oxlintrc.json</code></a>
+    <span>Dizayn bələdçisi<code>readme.md</code></span>
+    <span>Agent skill sarğısı<code>SKILL.md</code></span>
+  </div>
+
+  <footer>NarTalk Design System · Claude Design layihəsindən import edilib.</footer>
+</div></body></html>

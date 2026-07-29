@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap");
+/* NarTalk type stacks. Geist / Geist Mono are served from Google Fonts.
+   Geist is a neutral technical grotesk: tight apertures, tall x-height, excellent
+   at 12-14px in dense dashboard tables. No display face - marketing headlines are
+   Geist at 600 with negative tracking. */
+:root{
+  --font-sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --font-mono:"Geist Mono",ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+  --font-display:var(--font-sans);
+}
